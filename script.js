@@ -9,23 +9,23 @@ function modifyCubeFile() {
     const file = document.getElementById('file').files[0];
   
     if (file) {
-      const reader = new FileReader();
-      reader.onload = function(event) {
-        const cubeContent = event.target.result;
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            const cubeContent = event.target.result;
   
-        const modifiedCubeContent =
-          `#ProjectName ${projectName}\n#Look ${look}\n#ColorspaceIn ${colorspaceIn}\n#ColorspaceOut ${colorspaceOut}\n#DRT ${drt}\n#LookCreatedBy ${lookCreatedBy}\n#LUTSize ${lutSize}\n` +
-          cubeContent;
+            const modifiedCubeContent =
+            `#ProjectName ${projectName}\n#Look ${look}\n#ColorspaceIn ${colorspaceIn}\n#ColorspaceOut ${colorspaceOut}\n#DRT ${drt}\n#LookCreatedBy ${lookCreatedBy}\n#LUTSize ${lutSize}\n` +
+            cubeContent;
   
-        const modifiedFileName = `${projectName}_${look}_${colorspaceIn}_${colorspaceOut}_${lutSize}.cube`;
+            const modifiedFileName = `${projectName}_${look}_${colorspaceIn}_${colorspaceOut}_${lutSize}.cube`;
   
-        downloadFile(modifiedCubeContent, modifiedFileName);
+            downloadFile(modifiedCubeContent, modifiedFileName);
       };
       reader.readAsText(file);
     }
-  }
+}
   
-  function downloadFile(content, fileName) {
+function downloadFile(content, fileName) {
     const element = document.createElement('a');
     element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
     element.setAttribute('download', fileName);
@@ -36,5 +36,5 @@ function modifyCubeFile() {
     element.click();
   
     document.body.removeChild(element);
-  }
+}
   
