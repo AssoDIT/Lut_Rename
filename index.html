@@ -1,102 +1,129 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Renommer votre 3DLUt by ADIT</title>
-  <style>
-    body {
-      background-color: #1e1e1e;
-      font-family: Helvetica, sans-serif;
-      color: white;
-    }
-    
-    .grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 30px;
-    }
+    <title>Renommer votre 3DLUT by ADIT</title>
+    <style>
+        body 
+        {
+            background-color: #1e1e1e;
+            font-family: Helvetica, sans-serif;
+            color: white;
+        }
 
-    .grid-child-text {
-      text-align: right;
-    }
+        .grid-container 
+        {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 30px; 
+        }
 
-    .grid-child-image {
-      margin-top: 25px;
-    }
+        .grid-child-text 
+        {
+            
+            text-align: right;
+        }
+        
+        .grid-child-image 
+        {
+          
+            margin-top: 25px;
+        }
 
+        .grid-child-text2 
+        {
+           
+            text-align: left;
+            font-family:  courier new, courier;
+        }
+        
+        .grid-child-image img
+        {
+            width: 100%;
+        }
+        
     </style>
 </head>
 <body>
-  <div class="grid-container">
-    <div class="grid-child-text">
-      <h1>Modifier un fichier .cube</h1>
-      <form id="cubeForm">
-        <label for="projectName">Project name:</label>
-        <input type="text" id="projectName" required><br><br>
+    <div class="grid-container">
+        <div class="grid-child-text">
+            <h1>Modifier un fichier .cube</h1>
+            <form id="cubeForm">
+                <label for="projectName">Project name:</label>
+                <input type="text" id="projectName" required><br><br>
 
-        <label for="look">Look:</label>
-        <input type="text" id="look" required><br><br>
+                <label for="look">Look:</label>
+                <input type="text" id="look" required><br><br>
 
-        <label for="lookCreatedBy">Look created by:</label>
-        <input type="text" id="lookCreatedBy" required><br><br>
+                <label for="lookCreatedBy">Look created by:</label>
+                <input type="text" id="lookCreatedBy" required><br><br>
 
-        <label for="colorspaceIn">Colorspace In:</label>
-        <select id="colorspaceIn">
-          <option value="LogC4-AWG4">LogC4-AWG4</option>
-          <option value="LogC3-AWG3">LogC3-AWG3</option>
-          <option value="Log3G10-RWG">Log3G10-RWG</option>
-          <option value="S-Log3-SGammut3Cine">S-Log3-SGammut3Cine</option>
-          <option value="DLog-DGamut">DLog-DGamut</option>
-          <option value="ACEScct-AP1">ACEScct-AP1</option>
-          <option value="TLog-EGamut2">TLog-EGamut2</option>
-        </select><br><br>
+                <label for="colorspaceIn">Colorspace In:</label>
+                    <select id="colorspaceIn">
+                    <option value="LogC4-AWG4">LogC4-AWG4</option>
+                    <option value="LogC3-AWG3">LogC3-AWG3</option>
+                    <option value="Log3G10-RWG">Log3G10-RWG</option>
+                    <option value="S-Log3-SGammut3Cine">S-Log3-SGammut3Cine</option>
+                    <option value="DLog-DGamut">DLog-DGamut</option>
+                    <option value="ACEScct-AP1">ACEScct-AP1</option>
+                    <option value="TLog-EGamut2">TLog-EGamut2</option>
+                </select><br><br>
 
-        <label for="colorspaceOut">Colorspace Out:</label>
-        <select id="colorspaceOut">
-          <option value="2_4Gamma-Rec709">2_4Gamma-Rec709</option>
-          <option value="2_4Gamma-Rec2020">2_4Gamma-Rec2020</option>
-          <option value="ST2084PQ-Rec2020">ST2084PQ-Rec2020</option>
-          <option value="ST2084PQ-P3D65">ST2084PQ-Rec2020</option>
-          <option value="AP1-AcesCCT">AP1-AcesCCT</option>
-          <option value="LogC4-AWG4">LogC4-AWG4</option>
-          <option value="LogC3-AWG3">LogC3-AWG3</option>
-          <option value="Log3G10-RWG">Log3G10-RWG</option>
-          <option value="S-Log3-SGammut3Cine">S-Log3-SGammut3Cine</option>
-          <option value="DLog-DGamut">DLog-DGamut</option>
-          <option value="ACEScct-AP1">ACEScct-AP1</option>
-          <option value="TLog-EGamut2">TLog-EGamut2</option>
-        </select><br><br>
+                <label for="colorspaceOut">Colorspace Out:</label>
+                <select id="colorspaceOut">
+                    <option value="Gamma 2.4 - Rec709">Gamma 2.4 - Rec709</option>
+                    <option value="Gamma 2.4 - Rec2020">Gamma 2.4 - Rec2020</option>
+                    <option value="ST2084 PQ - Rec2020">ST2084 PQ - Rec2020</option>
+                    <option value="ST2084 PQ - P3D65">ST2084 PQ - P3D65</option>
+                    <option value="ACEScct - AP1">ACEScct - AP1</option>
+                    <option value="ARRI LogC3 - AWG3">ARRI LogC3 - AWG3</option>
+                    <option value="ARRI LogC4 - AWG4">ARRI LogC4 - AWG4</option>
+                    <option value="Log3G10 - RedWideGamut">RED Log3G10 - RedWideGamut</option>
+                    <option value="S-Log3 - S-Gamut3.Cine">Sony S-Log3 - S-Gamut3.Cine</option>
+                    <option value="S-Log3 - S-Gamut3.Cine">Sony S-Log3 - S-Gamut3</option>
+                    <option value="DLog - DGamut">DJI DLog - DGamut</option>
+                    <option value="TLog - EGamut2">Filmlight TLog - EGamut2</option>
+                </select><br><br>
 
-        <label for="drt">DRT:</label>
-        <select id="drt">
-          <option value="Null">Null</option>
-          <option value="ACES-RRT">ACES-RRT</option>
-          <option value="Filmlight_TCAMV3">Filmlight-TCAMV3</option>
-          <option value="Davinci">Davinci</option>
-          <option value="Arri">Arri-ALF2</option>
-          <option value="RED-IPP2">RED-IPP2</option>
-          <option value="Arri-REVEAL">Arri-REVEAL</option>
-        </select><br><br>
+                <label for="drt">DRT:</label>
+                <select id="drt">
+                    <option value="Null">Null</option>
+                    <option value="ACES 0.7.1">ACES 0.7.1</option>
+                    <option value="ACES 1.0.3">ACES 1.0.3</option>
+                    <option value="ACES 1.1">ACES 1.1</option>
+                    <option value="ACES 1.2">ACES 1.2</option>
+                    <option value="ACES 1.3 (rgc on)" title="ACES 1.3 RRT with reference gamut compress on">ACES 1.3 (rgc on)</option>
+                    <option value="ACES 1.3 (rgc off)" title="ACES 1.3 RRT with reference gamut compress off">ACES 1.3 (rgc off)</option>
+                    <option value="Filmlight TCAMV3">Filmlight TCAMV3</option>
+                    <option value="DaVinci">DaVinci</option>
+                    <option value="RED IPP2">RED IPP2</option>
+                    <option value="ARRI ALF2">ARRI ALF2</option>
+                    <option value="ARRI ALF4 (Reveal)">ARRI ALF4 (Reveal)</option>
+                    <option value="Sony Venice">Sony Venice</option>
+                    <option value="Panasonic Varicam">Panasonic Varicam</option>
+                    <option value="Other">Other</option>
+                </select><br><br>
 
-        <label for="lutSize">LUT Size:</label>
-        <select id="lutSize">
-          <option value="auto">Auto</option>
-          <option value="17">17</option>
-          <option value="33">33</option>
-          <option value="65">65</option>
-        </select><br><br>
+                <label for="lutSize">LUT Size:</label>
+                <select id="lutSize">
+                    <option value="auto">Auto</option>
+                    <option value="17">17</option>
+                    <option value="33">33</option>
+                    <option value="65">65</option>
+                </select><br><br>
 
-        <label for="file">Upload .cube file:</label>
-        <input type="file" id="file" accept=".cube" required><br><br>
+                <label for="file">Upload .cube file:</label>
+                <input type="file" id="file" accept=".cube" required><br><br>
 
-        <button type="button" onclick="modifyCubeFile()">Modifier</button>
-      </form>
-
-      <script src="script.js"></script>
+                <button type="button" onclick="modifyCubeFile()">Modifier</button>
+            </form>
+        </div>
+        <div class="grid-child-image">
+            <img src="background.png" />
+        </div>
+        <div class="grid-child-text2">
+            <p id="lutContentShow"></p>
+        </div>
     </div>
-    <div class="grid-child-image">
-      <img src="background.png" />
-    </div>
-  </div>
+    <script src="script.js"></script>
 </body>
 </html>
- 
